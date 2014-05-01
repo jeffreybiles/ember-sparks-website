@@ -7,5 +7,6 @@ export default Ember.ObjectController.extend({
 
   doneEditing: function() {
     this.set('isEditing', false);
+    this.get('model').save();
   }
 });

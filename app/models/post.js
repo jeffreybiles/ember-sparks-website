@@ -6,7 +6,11 @@ var Post = DS.Model.extend({
   body: DS.attr(),
 
   deckedOutVideoUrl: function(){
-    return this.get('videoUrl') + '?modestbranding=1&rel=0'
+    if(this.get('videoUrl')){
+      return this.get('videoUrl') + '?modestbranding=1&rel=0' 
+    } else {
+      return null
+    }
   }.property('videoUrl')
 })
 
