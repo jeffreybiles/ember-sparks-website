@@ -1,12 +1,14 @@
 export default Ember.ObjectController.extend({
   isEditing: false,
 
-  edit: function() {
-    this.set('isEditing', true);
-  },
+  actions: {
+    edit: function() {
+      this.set('isEditing', true);
+    },
 
-  doneEditing: function() {
-    this.set('isEditing', false);
-    this.get('model').save();
+    doneEditing: function() {
+      this.set('isEditing', false);
+      this.get('model').save();
+    }
   }
 });
