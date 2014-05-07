@@ -7,12 +7,12 @@ var Post = DS.Model.extend({
 
   deckedOutVideoUrl: function(){
     if(this.get('videoUrl')){
-      return this.get('videoUrl') + '?modestbranding=1&rel=0' 
+      return this.get('videoUrl') + '?modestbranding=1&rel=0';
     } else {
-      return null
+      return null;
     }
   }.property('videoUrl')
-})
+});
 
 Post.reopenClass({
   FIXTURES: [{
@@ -36,7 +36,7 @@ Post.reopenClass({
     date: new Date('3-4-2014'),
     body: ""
   }]
-})
+});
  
 
 export default Post;
