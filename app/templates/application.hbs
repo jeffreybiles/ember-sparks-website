@@ -5,8 +5,12 @@
         <li>{{#linkTo 'index'}}Home{{/linkTo}}</li>
         <li>{{#link-to 'posts'}}Posts{{/link-to}}</li>
         <li>{{#link-to 'about'}}About{{/link-to}}</li>
-        <li>{{#linkTo 'users.new'}}Register{{/linkTo}}</li>
-        <li>{{#linkTo 'sessions.new'}}Login{{/linkTo}}</li>
+        {{#if isAuthenticated}}
+          <li>{{currentUser.name}}</li>
+        {{else}}
+          <li>{{#linkTo 'users.new'}}Register{{/linkTo}}</li>
+          <li>{{#linkTo 'sessions.new'}}Login{{/linkTo}}</li>
+        {{/if}}
       </ul>
     </div>
   </div>
