@@ -1,6 +1,5 @@
 {{#if isEditing}}
-  {{partial 'post/edit'}}
-  <button {{action 'doneEditing'}}>Done</button>
+  {{post-form post=model afterSave='doneEditing'}}
 {{else}}
   <button {{action 'edit'}}>Edit</button><button {{action 'destroy'}}>Destroy</button>
 {{/if}}
